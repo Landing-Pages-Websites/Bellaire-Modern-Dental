@@ -1304,24 +1304,6 @@
       opacity: 1;
     }
 
-    /* Before & After labels on images */
-    .gallery-item::after {
-      content: 'Before                                        After';
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      right: 12px;
-      color: var(--white);
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      display: flex;
-      justify-content: space-between;
-      z-index: 2;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    }
-
     .gallery-item:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: var(--shadow-xl);
@@ -1329,7 +1311,7 @@
 
     .gallery-item img {
       width: 100%;
-      aspect-ratio: 1;
+      aspect-ratio: 3 / 2;
       object-fit: cover;
       transition: transform var(--transition-slow);
     }
