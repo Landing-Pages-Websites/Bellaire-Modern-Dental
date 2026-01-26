@@ -213,6 +213,11 @@
       50% { transform: scale(1.05); }
     }
 
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
     @keyframes shimmer {
       0% { background-position: -200% 0; }
       100% { background-position: 200% 0; }
@@ -484,62 +489,63 @@
       z-index: 0;
     }
 
-    /* Static gradient blob circles */
+    /* RIGHT SIDE - Animated floating circles (original style) */
     .hero-decoration-1 {
       top: 10%;
       right: 8%;
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(ellipse at 30% 40%, rgba(201, 169, 98, 0.15) 0%, rgba(201, 169, 98, 0.08) 35%, rgba(201, 169, 98, 0.02) 60%, transparent 80%);
-      border-radius: 40% 60% 55% 45% / 55% 45% 60% 40%;
-      filter: blur(1px);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201, 169, 98, 0.12) 0%, rgba(201, 169, 98, 0.05) 40%, transparent 70%);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
     }
 
-    .hero-decoration-2 {
-      bottom: 15%;
-      left: -5%;
-      width: 380px;
-      height: 380px;
-      background: radial-gradient(ellipse at 60% 50%, rgba(17, 34, 68, 0.08) 0%, rgba(17, 34, 68, 0.04) 40%, transparent 70%);
-      border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
-      filter: blur(1px);
-    }
-
-    .hero-decoration-3 {
-      top: 25%;
-      left: 15%;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, rgba(201, 169, 98, 0.12) 0%, rgba(201, 169, 98, 0.04) 50%, transparent 70%);
-      border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
-    }
-
-    /* Additional gradient blobs */
     .hero-decoration-4 {
       top: 60%;
       right: 15%;
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(ellipse at 40% 60%, rgba(201, 169, 98, 0.1) 0%, rgba(201, 169, 98, 0.03) 50%, transparent 70%);
-      border-radius: 45% 55% 60% 40% / 50% 40% 60% 50%;
-    }
-
-    .hero-decoration-5 {
-      top: 8%;
-      left: 25%;
-      width: 70px;
-      height: 70px;
-      background: radial-gradient(circle, rgba(17, 34, 68, 0.06) 0%, rgba(17, 34, 68, 0.02) 50%, transparent 70%);
-      border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(201, 169, 98, 0.1) 0%, rgba(201, 169, 98, 0.04) 50%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite 0.5s;
     }
 
     .hero-decoration-6 {
       bottom: 30%;
       right: 3%;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(ellipse at 50% 40%, rgba(201, 169, 98, 0.08) 0%, rgba(201, 169, 98, 0.03) 45%, transparent 70%);
-      border-radius: 50% 50% 55% 45% / 45% 55% 50% 50%;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(201, 169, 98, 0.08) 0%, rgba(201, 169, 98, 0.03) 50%, transparent 70%);
+      border-radius: 50%;
+      animation: float 7s ease-in-out infinite 1s;
+    }
+
+    /* LEFT SIDE - Static gradient blobs */
+    .hero-decoration-2 {
+      bottom: 10%;
+      left: -5%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(ellipse at 60% 50%, rgba(17, 34, 68, 0.2) 0%, rgba(17, 34, 68, 0.12) 35%, rgba(17, 34, 68, 0.04) 60%, transparent 75%);
+      border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
+    }
+
+    .hero-decoration-3 {
+      top: 20%;
+      left: 12%;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(201, 169, 98, 0.35) 0%, rgba(201, 169, 98, 0.2) 40%, rgba(201, 169, 98, 0.08) 65%, transparent 80%);
+      border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    }
+
+    .hero-decoration-5 {
+      top: 8%;
+      left: 28%;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(17, 34, 68, 0.18) 0%, rgba(17, 34, 68, 0.1) 40%, rgba(17, 34, 68, 0.03) 65%, transparent 80%);
+      border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%;
     }
 
     .hero-inner {
