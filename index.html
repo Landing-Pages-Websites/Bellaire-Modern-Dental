@@ -26,6 +26,17 @@
   <meta name="twitter:description" content="Houston's #1 rated cosmetic and restorative dentist. Book your free consultation today.">
   <meta name="twitter:image" content="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/2389800f-3487-4f7f-9956-e744dba04249/Bellaire-Social-Share.png?format=1500w">
 
+  <!-- MegaTag Configuration (MUST be before other scripts) -->
+  <script>
+  window.MEGA_TAG_CONFIG = {
+    siteKey: 'sk_mkvmzprh_1w6spfs76x3',
+    gtmId: 'GTM-5D3F2T4W',
+    pixelId: '1606451603646878'
+  };
+  </script>
+  <!-- MegaTag Optimizer -->
+  <script async src="https://optimizer.gomega.ai/optimize.js"></script>
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -50,6 +61,17 @@
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1606451603646878&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
+
+  <!-- CallTrackingMetrics - Dynamic Number Insertion -->
+  <script type="text/javascript">
+  (function(a,b,c,d,e,f,g){
+    a['CTMTrackingObject']=e;a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)};
+    a[e].l=1*new Date();f=b.createElement(c);g=b.getElementsByTagName(c)[0];
+    f.async=1;f.src=d;g.parentNode.insertBefore(f,g)
+  })(window,document,'script','//cdn.calltrackingmetrics.com/ctm.js','__ctm');
+  __ctm.main('16785', 'ctm-bf3d4b4a');
+  </script>
+  <!-- End CallTrackingMetrics -->
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -432,6 +454,34 @@
       overflow: hidden;
     }
 
+    /* Vertical diagonal panel covering right half */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(17, 34, 68, 0.03) 0%, rgba(17, 34, 68, 0.06) 100%);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Gold accent stripe */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(201, 169, 98, 0.08) 50%, rgba(201, 169, 98, 0.12) 100%);
+      clip-path: polygon(20% 0, 100% 0, 100% 100%, 5% 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     /* Decorative elements */
     .hero-decoration {
       position: absolute;
@@ -440,33 +490,80 @@
     }
 
     .hero-decoration-1 {
-      top: 15%;
-      right: 5%;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(201, 169, 98, 0.15) 0%, transparent 70%);
+      top: 10%;
+      right: 8%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201, 169, 98, 0.12) 0%, rgba(201, 169, 98, 0.05) 40%, transparent 70%);
       border-radius: 50%;
       animation: float 6s ease-in-out infinite;
     }
 
     .hero-decoration-2 {
-      bottom: 20%;
-      left: 2%;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(17, 34, 68, 0.08) 0%, transparent 70%);
+      bottom: 15%;
+      left: -5%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(17, 34, 68, 0.06) 0%, rgba(17, 34, 68, 0.02) 40%, transparent 70%);
       border-radius: 50%;
       animation: float 8s ease-in-out infinite reverse;
     }
 
     .hero-decoration-3 {
-      top: 40%;
-      left: 10%;
-      width: 60px;
-      height: 60px;
-      border: 2px solid rgba(201, 169, 98, 0.3);
+      top: 25%;
+      left: 15%;
+      width: 80px;
+      height: 80px;
+      border: 2px solid rgba(201, 169, 98, 0.25);
       border-radius: 50%;
       animation: float 4s ease-in-out infinite;
+    }
+
+    /* Additional decorative shapes */
+    .hero-decoration-4 {
+      top: 60%;
+      right: 15%;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, rgba(201, 169, 98, 0.1) 0%, transparent 60%);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation: morphFloat 10s ease-in-out infinite;
+    }
+
+    .hero-decoration-5 {
+      top: 8%;
+      left: 25%;
+      width: 50px;
+      height: 50px;
+      border: 1.5px solid rgba(17, 34, 68, 0.1);
+      border-radius: 50%;
+      animation: float 5s ease-in-out infinite 1s;
+    }
+
+    .hero-decoration-6 {
+      bottom: 30%;
+      right: 3%;
+      width: 180px;
+      height: 180px;
+      background: conic-gradient(from 45deg, transparent, rgba(201, 169, 98, 0.06), transparent, rgba(201, 169, 98, 0.06), transparent);
+      border-radius: 50%;
+      animation: slowSpin 20s linear infinite;
+    }
+
+    @keyframes morphFloat {
+      0%, 100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+        transform: translateY(-20px) rotate(10deg);
+      }
+    }
+
+    @keyframes slowSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     .hero-inner {
@@ -505,13 +602,14 @@
       height: 18px;
     }
 
-    .hero-title {
+    #hero-title {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
       margin-bottom: 24px;
       color: var(--primary-navy);
       line-height: 1.15;
     }
 
-    .hero-title span {
+    #hero-title span {
       color: var(--accent-gold);
     }
 
@@ -683,16 +781,59 @@
     }
 
     @media (max-width: 992px) {
+      #hero::before,
+      #hero::after {
+        display: none;
+      }
       .hero-inner {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
         min-height: auto;
         padding: var(--section-padding-mobile) 0;
         text-align: center;
       }
-      .hero-subtitle { margin-left: auto; margin-right: auto; }
-      .hero-ctas { justify-content: center; }
+      .hero-content {
+        order: 1;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .hero-badge {
+        display: inline-flex !important;
+        visibility: visible !important;
+      }
+      .hero-image-wrapper {
+        order: 2;
+        max-width: 500px;
+        margin: 40px auto 0;
+        padding-bottom: 60px;
+      }
+      #hero-title {
+        display: block !important;
+        visibility: visible !important;
+        font-size: clamp(1.75rem, 5vw, 2.5rem) !important;
+        color: var(--primary-navy) !important;
+        opacity: 1 !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .hero-subtitle {
+        display: block !important;
+        visibility: visible !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-ctas {
+        display: flex !important;
+        visibility: visible !important;
+        justify-content: center;
+      }
       .hero-trust { justify-content: center; }
-      .hero-image-wrapper { max-width: 500px; margin: 40px auto 0; }
       .hero-rating-card { left: 50%; transform: translateX(-50%); bottom: -40px; }
       .hero-experience-card { display: none; }
       .hero-decoration { display: none; }
@@ -1127,6 +1268,213 @@
     }
 
     /* ========================================
+       BEFORE & AFTER GALLERY
+    ======================================== */
+    #gallery {
+      padding: var(--section-padding) 0;
+      background: linear-gradient(180deg, var(--off-white) 0%, var(--cream) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-medium);
+      cursor: pointer;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(17, 34, 68, 0.8) 100%);
+      opacity: 0;
+      transition: opacity var(--transition-medium);
+      z-index: 1;
+    }
+
+    .gallery-item:hover::before {
+      opacity: 1;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all var(--transition-medium);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gallery-label::before {
+      content: '';
+      width: 30px;
+      height: 2px;
+      background: var(--accent-gold);
+    }
+
+    .gallery-item:hover .gallery-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 992px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 48px auto 0;
+      }
+    }
+
+    /* ========================================
+       MEET OUR TEAM
+    ======================================== */
+    #team {
+      padding: var(--section-padding) 0;
+      background: var(--white);
+      position: relative;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 56px;
+    }
+
+    .team-card {
+      text-align: center;
+      transition: all var(--transition-medium);
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .team-image-wrapper {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .team-image {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--accent-gold);
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition-medium);
+    }
+
+    .team-card:hover .team-image {
+      border-color: var(--primary-navy);
+      box-shadow: var(--shadow-xl), 0 0 0 8px rgba(201, 169, 98, 0.2);
+    }
+
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .team-card:hover .team-image img {
+      transform: scale(1.08);
+    }
+
+    .team-name {
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      margin-bottom: 8px;
+    }
+
+    .team-title {
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .team-bio {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 992px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+      }
+
+      .team-card:nth-child(3) {
+        grid-column: 1 / -1;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 56px auto 0;
+      }
+
+      .team-card:nth-child(3) {
+        grid-column: auto;
+        max-width: none;
+      }
+    }
+
+    /* ========================================
        TESTIMONIALS
     ======================================== */
     #testimonials {
@@ -1356,7 +1704,7 @@
     /* ========================================
        CONTACT FORM
     ======================================== */
-    #form {
+    #contact {
       padding: var(--section-padding) 0;
       background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
       position: relative;
@@ -1734,7 +2082,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           <span>(832) 536-9358</span>
         </a>
-        <a href="#form" class="btn btn-primary header-btn">Book Consultation</a>
+        <a href="#contact" class="btn btn-primary header-btn">Book Consultation</a>
       </div>
     </div>
   </header>
@@ -1747,6 +2095,9 @@
       <div class="hero-decoration hero-decoration-1"></div>
       <div class="hero-decoration hero-decoration-2"></div>
       <div class="hero-decoration hero-decoration-3"></div>
+      <div class="hero-decoration hero-decoration-4"></div>
+      <div class="hero-decoration hero-decoration-5"></div>
+      <div class="hero-decoration hero-decoration-6"></div>
 
       <div class="container">
         <div class="hero-inner">
@@ -1758,7 +2109,7 @@
             <h1 id="hero-title">Premium <span>Dental Implants</span> & Veneers in Houston</h1>
             <p class="hero-subtitle">We're an award-winning dental practice offering premium dental implants, All-on-4 solutions, and cosmetic veneers. Experience world-class care with a focus on quality and lasting results.</p>
             <div class="hero-ctas">
-              <a href="#form" class="btn btn-gold btn-lg">
+              <a href="#contact" class="btn btn-gold btn-lg">
                 Book Free Consultation
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </a>
@@ -1784,7 +2135,7 @@
           </div>
           <div class="hero-image-wrapper">
             <div class="hero-image">
-              <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/99b5ee19-7e91-4397-9a1a-3ebfa4ef3f63/SmilingPatient-1.jpg" alt="Happy patient with beautiful smile at Bellaire Modern Dental" width="600" height="500" loading="eager">
+              <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/b4938fbe-3fdd-4567-bba5-c2b492c1b535/Bellaire-Exterior.jpg?format=2500w" alt="Bellaire Modern Dental exterior" width="600" height="500" loading="eager">
             </div>
             <div class="hero-rating-card">
               <div class="rating-icon">
@@ -1859,7 +2210,7 @@
               </div>
               <h3 class="service-title">All-on-4 Dental Implants</h3>
               <p class="service-description">Replace your missing teeth with a full arch of permanent teeth supported by just four strategically placed implants. Restore your smile with our expert team.</p>
-              <a href="#form" class="service-link">
+              <a href="#contact" class="service-link">
                 Get Free Consultation
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
@@ -1877,7 +2228,7 @@
               </div>
               <h3 class="service-title">Dental Implants</h3>
               <p class="service-description">We offer a full range of dental implant options using industry-leading equipment and techniques. Replace missing teeth and restore your confident smile.</p>
-              <a href="#form" class="service-link">
+              <a href="#contact" class="service-link">
                 Get Free Consultation
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
@@ -1895,7 +2246,7 @@
               </div>
               <h3 class="service-title">Porcelain Veneers</h3>
               <p class="service-description">Smile with confidence. We offer a full range of aesthetic options to help you improve imperfections and achieve the beautiful smile you deserve.</p>
-              <a href="#form" class="service-link">
+              <a href="#contact" class="service-link">
                 Get Free Consultation
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
@@ -1904,13 +2255,58 @@
         </div>
 
         <div class="section-ctas animate-on-scroll">
-          <a href="#form" class="btn btn-primary btn-lg">
+          <a href="#contact" class="btn btn-primary btn-lg">
             Get Your Free Consultation
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="tel:8325369358" class="btn btn-outline btn-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             (832) 536-9358
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         BEFORE & AFTER GALLERY
+    ======================================== -->
+    <section id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">Smile Gallery</span>
+          <h2 id="gallery-title" class="section-title">Real Results, Real Patients</h2>
+          <p class="section-subtitle">See the life-changing transformations we've created for our patients. These before and after photos showcase the quality and precision of our dental work.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item animate-on-scroll">
+            <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/d97ccd6d-9c75-4949-98aa-1e68a9d0340f/Bellaire-SmileGallery-Chiquita.jpg" alt="Before and After - Smile Transformation" loading="lazy">
+            <span class="gallery-label">Smile Makeover</span>
+          </div>
+          <div class="gallery-item animate-on-scroll delay-1">
+            <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/ad0c53a2-14e8-4fbf-b44e-41d984af7a27/Bellaire-SmileGallery-Alma.jpg" alt="Before and After - Dental Veneers" loading="lazy">
+            <span class="gallery-label">Veneers</span>
+          </div>
+          <div class="gallery-item animate-on-scroll delay-2">
+            <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/40775740-931b-48c3-9341-2678ee6dd384/Bellaire-SmileGallery-Barrett.jpg" alt="Before and After - Full Mouth Restoration" loading="lazy">
+            <span class="gallery-label">Full Restoration</span>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/3c8d56a3-de0f-4e1e-9ee5-4c3a6b6039ac/Bellaire-SmileGallery-Bethel.jpg" alt="Before and After - Dental Implants" loading="lazy">
+            <span class="gallery-label">Dental Implants</span>
+          </div>
+          <div class="gallery-item animate-on-scroll delay-1">
+            <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/ad4dcaf4-7c94-40c0-9ec6-b9062fa8020a/Bellaire-SmileGallery-Christopher.jpg" alt="Before and After - Cosmetic Dentistry" loading="lazy">
+            <span class="gallery-label">Cosmetic Dentistry</span>
+          </div>
+          <div class="gallery-item animate-on-scroll delay-2">
+            <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/49ea5156-8f85-46de-ba02-4a3625ac0432/Bellaire-SmileGallery-Daniel.jpg" alt="Before and After - All-on-4 Implants" loading="lazy">
+            <span class="gallery-label">All-on-4 Implants</span>
+          </div>
+        </div>
+        <div class="section-ctas animate-on-scroll">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Start Your Transformation
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
       </div>
@@ -1978,13 +2374,66 @@
         </div>
 
         <div class="section-ctas animate-on-scroll">
-          <a href="#form" class="btn btn-gold btn-lg">
+          <a href="#contact" class="btn btn-gold btn-lg">
             Get Your Free Consultation
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="tel:8325369358" class="btn btn-outline btn-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             (832) 536-9358
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         MEET OUR TEAM
+    ======================================== -->
+    <section id="team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">Expert Care</span>
+          <h2 id="team-title" class="section-title">Meet Our Team of Dental Experts</h2>
+          <p class="section-subtitle">Our team of highly trained specialists brings decades of combined experience to deliver exceptional results for every patient.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card animate-on-scroll">
+            <div class="team-image-wrapper">
+              <div class="team-image">
+                <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/a845eb1c-6d21-48a1-8f0e-5c642ced8f31/DrEscobar-2025.jpg" alt="Dr. Ernie Escobar" loading="lazy">
+              </div>
+            </div>
+            <h3 class="team-name">Dr. Ernie Escobar</h3>
+            <span class="team-title">General Dentist</span>
+            <p class="team-bio">Dr. Escobar is highly skilled in cosmetic procedures and works closely with his team of professionals to create beautiful, life-changing smiles.</p>
+          </article>
+
+          <article class="team-card animate-on-scroll delay-1">
+            <div class="team-image-wrapper">
+              <div class="team-image">
+                <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/312af180-8b02-46d7-a7af-f4cea5cfb22d/drjohnson500.jpg" alt="Dr. LT Johnson" loading="lazy">
+              </div>
+            </div>
+            <h3 class="team-name">Dr. LT Johnson</h3>
+            <span class="team-title">Oral & Maxillofacial Surgeon</span>
+            <p class="team-bio">Dr. Johnson attended Meharry Medical College where he completed an advanced residency in Oral and Maxillofacial Surgery.</p>
+          </article>
+
+          <article class="team-card animate-on-scroll delay-2">
+            <div class="team-image-wrapper">
+              <div class="team-image">
+                <img src="https://images.squarespace-cdn.com/content/v1/67522ea9ea4b3147aabef81c/cca928d0-55ae-47fb-afa9-2f29419bb296/DrMunu-2025.jpg" alt="Dr. Isatu Munu" loading="lazy">
+              </div>
+            </div>
+            <h3 class="team-name">Dr. Isatu Munu</h3>
+            <span class="team-title">Prosthodontist</span>
+            <p class="team-bio">Dr. Munu is a prosthodontist with advanced training in full-mouth rehabilitation, dental implants, and comprehensive treatment planning.</p>
+          </article>
+        </div>
+        <div class="section-ctas animate-on-scroll">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Schedule With Our Experts
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
       </div>
@@ -2045,7 +2494,7 @@
         </div>
 
         <div class="section-ctas animate-on-scroll">
-          <a href="#form" class="btn btn-primary btn-lg">
+          <a href="#contact" class="btn btn-primary btn-lg">
             Get Your Free Consultation
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -2098,7 +2547,7 @@
               </div>
             </div>
 
-            <a href="#form" class="btn btn-primary btn-lg">
+            <a href="#contact" class="btn btn-primary btn-lg">
               Book Your Consultation
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
@@ -2122,7 +2571,7 @@
     <!-- ========================================
          CONTACT FORM
     ======================================== -->
-    <section id="form" aria-labelledby="form-title">
+    <section id="contact" aria-labelledby="form-title">
       <div class="form-bg-pattern"></div>
       <div class="container">
         <div class="form-wrapper">
@@ -2167,7 +2616,7 @@
               <p>Your consultation request has been received. Our team will contact you within 24 hours to schedule your appointment.</p>
             </div>
 
-            <form id="contactForm" class="contact-form" novalidate>
+            <form id="contactForm" class="contact-form">
               <div class="form-row">
                 <div class="form-group">
                   <label for="firstName">First Name <span class="required">*</span></label>
@@ -2249,7 +2698,7 @@
 
   <!-- Floating CTA -->
   <div class="floating-cta" id="floatingCta">
-    <a href="#form" class="btn btn-gold">
+    <a href="#contact" class="btn btn-gold">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
       Book Free Consultation
     </a>
@@ -2398,7 +2847,8 @@
 
       const payload = {
         customer_id: '6b7f54a2-d6eb-4677-bec5-f5e1c08ee928',
-        site_id: 'bellaire-modern-dental-lp',
+        site_id: '9e7e4c45-1b5d-490d-aab9-4e42ed8ed195',
+        site_key: 'sk_mkvmzprh_1w6spfs76x3',
         form_data: formDataObj,
         page_url: window.location.href,
         referrer: document.referrer || '',
