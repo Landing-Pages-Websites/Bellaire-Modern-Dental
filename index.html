@@ -811,7 +811,6 @@
         order: 2;
         max-width: 500px;
         margin: 40px auto 0;
-        padding-bottom: 60px;
       }
       #hero-title {
         display: block !important;
@@ -834,7 +833,12 @@
         justify-content: center;
       }
       .hero-trust { justify-content: center; }
-      .hero-rating-card { left: 50%; transform: translateX(-50%); bottom: -40px; }
+      .hero-rating-card {
+        position: static;
+        transform: none;
+        margin: 24px auto 0;
+        max-width: 280px;
+      }
       .hero-experience-card { display: none; }
       .hero-decoration { display: none; }
     }
@@ -1013,6 +1017,11 @@
       object-fit: cover;
       object-position: top center;
       transition: transform var(--transition-slow);
+    }
+
+    /* Adjust first service image to show teeth */
+    .service-card:first-child .service-image img {
+      object-position: center 35%;
     }
 
     .service-card:hover .service-image img {
