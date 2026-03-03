@@ -2642,6 +2642,20 @@
               </div>
 
               <div class="qualifying-question">
+                <label>Do you have Medicaid or Medicare? <span class="required">*</span></label>
+                <div class="radio-group">
+                  <label class="radio-option">
+                    <input type="radio" name="medicaidMedicare" value="yes" required>
+                    <span>Yes</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="medicaidMedicare" value="no">
+                    <span>No</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="qualifying-question">
                 <label>Are you comfortable with a procedure costing over $25,000? <span class="required">*</span></label>
                 <div class="radio-group">
                   <label class="radio-option">
@@ -2869,6 +2883,7 @@
               event: 'form_submission',
               form_name: 'consultation_request',
               service: formDataObj.service,
+              medicaid_medicare: formDataObj.medicaidMedicare,
               investment_comfort: formDataObj.investmentComfort,
               price_vs_quality: formDataObj.priceVsQuality
             });
